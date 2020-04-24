@@ -7,7 +7,7 @@ Scaffold directory structures using a yaml file.
 Create a `.yamldir.yml` file and execute your scaffold command:
 
 ```
-npx yamldir [options] [command] [...args]`
+npx yamldir [options] [command] [...args]
 ```
 
 Note: `yamldir` will traverse upwards from the `cwd` until it finds a `.yamldir.yml` file to use.

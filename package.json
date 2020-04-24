@@ -1,0 +1,35 @@
+{
+  "name": "yamldir",
+  "version": "1.0.0",
+  "description": "Scaffold directory sturctures quickly",
+  "main": "./index.js",
+  "directories": {
+    "test": "test"
+  },
+ "bin": {
+   "yamldir": "./bin/yamldir"
+ },
+  "dependencies": {
+    "commander": "^5.0.0",
+    "yaml-reader": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "index.js",
+    "bin/yamldir",
+    ".yamldir.yml"
+  ],
+  "keywords": [
+    "yaml",
+    "scaffold",
+    "yamldir",
+    "directory",
+    "structure",
+    "generator"
+  ],
+  "author": "Joe Withey",
+  "license": "ISC"
+}

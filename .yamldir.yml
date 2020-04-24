@@ -1,0 +1,63 @@
+# .yamldir.yml is a plain yaml file used to confgure the scaffolding commands
+# Each top level key is a command
+
+# Lists represent lists of files and directories
+# Key, values pairs represent a either a nested directory structure (list value) or file contents (string value)
+# Variables are represented in the form `$0`, `$1` etc, these are positional arguments supplied to the cli command e.g `$ yamldir component Button`, here $0 is assigned a vale of "Button"
+
+app: # Example usage: $ yamldir app
+  - app.js
+  - config:
+    - dev.js
+    - prod.js
+    - index.js
+  - http:
+    - middleware:
+      - index.js
+    - routes:
+      - index.js
+  - db/ # Empty directories require a trailing slash to differentiate them from files
+  - domain/
+  - .env
+  - .env.example
+module: # Example usage: $ yamldir module
+  - reducer.js: |
+      import actions from './actions'
+      
+      export default function reducer(state, action) {
+        return state
+      }
+  - reducer.spec.js: |
+      import reducer from './reducer'
+
+      describe('reducer', () => {
+
+      })
+  - actions.js: |
+      export default {}
+  - index.js: |
+      import reducer from './reducer'
+      import actions from './actions'
+
+      export {
+        reducer,
+        actions
+      }
+component: # Example usage: $ yamldir -d src/components component Button
+  - $0:
+    - index.js: |
+        import $0 from './container'
+    - container.js: |
+        import $0 from './$0'
+
+        export default $0
+    - $0.js: |
+        import React from 'react'
+
+        function $0(props) {
+          return (
+            
+          )
+        }
+
+        export default $0

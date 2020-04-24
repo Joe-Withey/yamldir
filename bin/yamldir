@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+const { program } = require('commander')
+const { make } = require('../index')
+const fs = require('fs')
+const path = require('path')
+
+program
+  .version('0.0.1') 
+  .usage("[options] command [args]")
+  .option(
+    '-d, --dir <dir>',
+    'relative path of the target directory where to perform scaffolding command',
+    '.'
+  ) 
+  .command('yamldir-example', 'show an example .yamldir.yml file, you can use it as a starter template by executing `$ yamldir yamldir-example > .yamldir.yml`');
+
+program.on('--help', () => {
+  console.log('');
+  console.log('The rest of your commands are defined in the .yamldir.yml file');
+  console.log('');
+  console.log('Example:');
+  console.log('  $ yamldir -d src/components component Button');
+});
+
+program.parse(process.argv);
+
+if (program.args[0] === 'yamldir-example') {
+  const file = fs.readFileSync(path.resolve(__dirname, '.yamldir.yml'));
+  console.log(file.toString());
+  process.exit(0)
+}
+
+if (!program.args.length) {
+  program.help()
+}
+
+const [key, ...args] = program.args
+
+make({ key, dir: program.dir }, args)

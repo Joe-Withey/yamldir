@@ -5,14 +5,16 @@ const fs = require('fs')
 const path = require('path')
 
 program
-  .version('0.0.1') 
   .usage("[options] [command] [...args]")
+  .option(
+    "--example",
+    'show an example .yamldir.yml file, you can use it as a starter template by executing `$ yamldir --example > .yamldir.yml`'
+  )
   .option(
     '-d, --dir <dir>',
     'relative path of the target directory where to perform scaffolding command',
     '.'
-  ) 
-  .command('yamldir-example', 'show an example .yamldir.yml file, you can use it as a starter template by executing `$ yamldir yamldir-example > .yamldir.yml`');
+  );
 
 program.on('--help', () => {
   console.log('');
@@ -24,8 +26,8 @@ program.on('--help', () => {
 
 program.parse(process.argv);
 
-if (program.args[0] === 'yamldir-example') {
-  const file = fs.readFileSync(path.resolve(__dirname, '.yamldir.yml'));
+if (program.example) {
+  const file = fs.readFileSync(path.resolve(__dirname, '../.yamldir.yml'));
   console.log(file.toString());
   process.exit(0)
 }

@@ -6,9 +6,9 @@
   "directories": {
     "test": "test"
   },
- "bin": {
-   "yamldir": "./bin/yamldir"
- },
+  "bin": {
+    "yamldir": "./bin/yamldir"
+  },
   "dependencies": {
     "commander": "^5.0.0",
     "yaml-reader": "^1.0.3"

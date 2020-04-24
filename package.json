@@ -1,7 +1,7 @@
 {
   "name": "yamldir",
   "version": "0.0.1",
-  "description": "Scaffold directory sturctures quickly",
+  "description": "Scaffold directory structures quickly",
   "main": "./index.js",
   "directories": {
     "test": "test"
@@ -15,7 +15,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "keywords": [
     "yaml",

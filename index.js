@@ -15,7 +15,7 @@ function getPathToConfigFile(cwd) {
 
     console.log(`
       You can generate an example ${configFile} by executing:
-      $ yamldir yamldir-example > ${configFile}
+      $ yamldir --example > ${configFile}
     `)
 
     process.exit(1)

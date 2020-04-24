@@ -6,7 +6,7 @@ const path = require('path')
 
 program
   .version('0.0.1') 
-  .usage("[options] command [args]")
+  .usage("[options] [command] [...args]")
   .option(
     '-d, --dir <dir>',
     'relative path of the target directory where to perform scaffolding command',

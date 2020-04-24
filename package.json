@@ -31,5 +31,6 @@
     "generator"
   ],
   "author": "Joe Withey",
+  "repository": "github:joe-withey/yamldir",
   "license": "ISC"
 }

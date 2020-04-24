@@ -2,8 +2,8 @@
 # Each top level key is a command
 
 # Lists represent lists of files and directories
-# Key, values pairs represent a either a nested directory structure (list value) or file contents (string value)
-# Variables are represented in the form `$0`, `$1` etc, these are positional arguments supplied to the cli command e.g `$ yamldir component Button`, here $0 is assigned a vale of "Button"
+# Key, value pairs represent either a nested directory structure (list value) or file contents (string value)
+# Variables are represented in the form `$0`, `$1` etc, these are positional arguments supplied to the cli command e.g `$ yamldir component Button`, here $0 is assigned a value of "Button"
 
 app: # Example usage: $ yamldir app
   - app.js

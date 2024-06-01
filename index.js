@@ -56,7 +56,7 @@ function readObject(object) {
   return [key, object[key]]
 } 
 
-function printVars(string, ...args) {
+function printVars(string, args) {
   return string.replace(
     /[^\\]\$(\d)/g,
     (match, index) => match.replace(/\$\d/, args[index])

@@ -43,21 +43,14 @@ module: # Example usage: $ yamldir module
         reducer,
         actions
       }
-component: # Example usage: $ yamldir -d src/components component Button
+component: # Example usage: $ yamldir -d src/components component button Button
   - $0:
     - index.js: |
-        import $0 from './container'
-    - container.js: |
-        import $0 from './$0'
-
-        export default $0
+        export * from '$0'
     - $0.js: |
-        import React from 'react'
-
-        function $0(props) {
+        export function $1(props) {
           return (
-            
+            <>
+            </>
           )
         }
-
-        export default $0

@@ -1,6 +1,6 @@
 {
   "name": "yamldir",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Scaffold directory structures quickly",
   "main": "./index.js",
   "directories": {
